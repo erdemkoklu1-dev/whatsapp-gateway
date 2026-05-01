@@ -54,6 +54,7 @@ async function initClient() {
   waClient = new Client({
     authStrategy: new LocalAuth({ dataPath: '.wwebjs_auth' }),
     puppeteer: {
+            executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
       headless: true,
       args: [
         '--no-sandbox',
